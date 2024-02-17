@@ -1,4 +1,4 @@
-package com.selfcoders.common.bukkitlibrary;
+package com.selfcoders.bukkitlibrary;
 
 import org.bukkit.Material;
 import org.bukkit.Tag;
