@@ -9,6 +9,7 @@ import org.bukkit.block.Sign;
 import org.bukkit.block.data.BlockData;
 import org.bukkit.block.data.type.WallSign;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 
@@ -166,5 +167,40 @@ public class SignUtils {
 
         WallSign sign = (WallSign) blockData;
         return signBlock.getRelative(sign.getFacing().getOppositeFace());
+    }
+
+    /**
+     * Returns all signs attached to the specified block.
+     *
+     * @param block     The block to use
+     * @param predicate Optional predicate to check the sign and filter the returned list (i.e. to check sign content)
+     * @return A list of signs attached to the specified block
+     */
+    public static List<Sign> getSignsAttachedToBlock(Block block, Predicate<Sign> predicate) {
+        List<Sign> signs = new ArrayList<>();
+
+        for (BlockFace blockFace : BlockUtils.BLOCK_FACES) {
+            Block faceBlock = block.getRelative(blockFace);
+            Material faceBlockType = faceBlock.getType();
+
+            if (!Tag.WALL_SIGNS.isTagged(faceBlockType)) {
+                continue;
+            }
+
+            Sign signBlock = (Sign) faceBlock.getState();
+            BlockFace attachedFace = ((WallSign) signBlock.getBlockData()).getFacing();
+
+            if (!blockFace.equals(attachedFace)) {
+                continue;
+            }
+
+            if (predicate != null && !predicate.test(signBlock)) {
+                continue;
+            }
+
+            signs.add(signBlock);
+        }
+
+        return signs;
     }
 }
