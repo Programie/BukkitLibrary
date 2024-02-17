@@ -63,6 +63,8 @@ public class Experience {
     }
 
     /**
+     * Get the amount of experience required for the specific level.
+     *
      * @see <a href="https://minecraft.gamepedia.com/Experience#Leveling_up">Minecraft wiki</a>
      *
      * <p>
