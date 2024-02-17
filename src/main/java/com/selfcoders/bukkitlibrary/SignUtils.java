@@ -16,10 +16,23 @@ import java.util.function.Predicate;
  * Utility methods for Signs.
  */
 public class SignUtils {
+    /**
+     * Check whether one of the given blocks has a sign attached to it or is a sign itself.
+     *
+     * @param blocks The list of blocks to check
+     * @return true if a sign was found, false otherwise
+     */
     public static boolean hasBlockSign(List<Block> blocks) {
         return hasBlockSign(blocks, null);
     }
 
+    /**
+     * Check whether one of the given blocks has a sign attached to it or is a sign itself.
+     *
+     * @param blocks    The list of blocks to check
+     * @param predicate Optional predicate to check the sign (i.e. to check sign content)
+     * @return true if a sign was found matching the optional predicate, false otherwise
+     */
     public static boolean hasBlockSign(List<Block> blocks, Predicate<Sign> predicate) {
         for (Block block : blocks) {
             if (hasBlockSign(block, predicate)) {
