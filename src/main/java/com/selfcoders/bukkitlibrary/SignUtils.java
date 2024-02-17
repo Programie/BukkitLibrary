@@ -172,6 +172,16 @@ public class SignUtils {
     /**
      * Returns all signs attached to the specified block.
      *
+     * @param block The block to use
+     * @return A list of signs attached to the specified block
+     */
+    public static List<Sign> getSignsAttachedToBlock(Block block) {
+        return getSignsAttachedToBlock(block, null);
+    }
+
+    /**
+     * Returns all signs attached to the specified block.
+     *
      * @param block     The block to use
      * @param predicate Optional predicate to check the sign and filter the returned list (i.e. to check sign content)
      * @return A list of signs attached to the specified block
