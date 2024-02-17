@@ -72,7 +72,7 @@ public class Experience {
      * 9[Current Level] - 158 (at level 31+)"
      * </p>
      */
-    private static int getExpToNext(int level) {
+    public static int getExpToNext(int level) {
         if (level > 30) {
             return 9 * level - 158;
         }
