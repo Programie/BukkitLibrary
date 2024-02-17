@@ -10,7 +10,7 @@
 
     <groupId>com.selfcoders</groupId>
     <artifactId>bukkit-library</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>bukkit-library</name>
@@ -40,7 +40,7 @@
         <connection>scm:git:ssh://git@github.com/Programie/BukkitLibrary.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/Programie/BukkitLibrary.git</developerConnection>
         <url>https://github.com/Programie/BukkitLibrary</url>
-        <tag>1.0.0</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <repositories>
