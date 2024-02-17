@@ -150,4 +150,21 @@ public class SignUtils {
 
         return (Sign) blockState;
     }
+
+    /**
+     * Get the block the sign is attached to.
+     *
+     * @param signBlock The block of the sign
+     * @return The block the sign is attached to or null if the sign block is not a wall sign
+     */
+    public static Block getSignFromAttachedBlock(Block signBlock) {
+        BlockData blockData = signBlock.getBlockData();
+
+        if (!(blockData instanceof WallSign)) {
+            return null;
+        }
+
+        WallSign sign = (WallSign) blockData;
+        return signBlock.getRelative(sign.getFacing().getOppositeFace());
+    }
 }
