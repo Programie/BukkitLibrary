@@ -22,7 +22,7 @@ Add the library as a dependency:
     <dependency>
         <groupId>com.selfcoders</groupId>
         <artifactId>bukkit-library</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>1.0.0</version>
     </dependency>
 </dependencies>
 ```
