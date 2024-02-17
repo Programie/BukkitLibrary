@@ -9,7 +9,6 @@ import org.bukkit.block.Sign;
 import org.bukkit.block.data.BlockData;
 import org.bukkit.block.data.type.WallSign;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.function.Predicate;
 
@@ -17,8 +16,6 @@ import java.util.function.Predicate;
  * Utility methods for Signs.
  */
 public class SignUtils {
-    final static List<BlockFace> BLOCK_FACES = Arrays.asList(BlockFace.UP, BlockFace.EAST, BlockFace.NORTH, BlockFace.WEST, BlockFace.SOUTH);
-
     public static boolean hasBlockSign(List<Block> blocks) {
         return hasBlockSign(blocks, null);
     }
@@ -63,7 +60,7 @@ public class SignUtils {
         }
 
         // Check each block face for a sign
-        for (BlockFace blockFace : BLOCK_FACES) {
+        for (BlockFace blockFace : BlockUtils.BLOCK_FACES) {
             if (checkSignAttachedToBlockFace(block, blockFace, predicate)) {
                 return true;
             }
